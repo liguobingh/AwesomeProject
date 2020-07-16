@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 
 import {
@@ -24,9 +25,22 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import ButtonBasics from './Components/ButtonBasics';
+
 const App: () => React$Node = () => {
   return (
     <>
+      <View style={styles.buttonContainer}>
+        <Button
+          onPress={() => {
+            alert("你点击了按钮A！")
+          }}
+          title={"按钮A"}
+        // color={'yellow'}
+        />
+
+
+      </View>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -68,41 +82,43 @@ const App: () => React$Node = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
   );
 };
 
 const styles = StyleSheet.create({
+        buttonContainer: {
+        margin: 20,
+  },
   scrollView: {
-    backgroundColor: Colors.lighter,
+        backgroundColor: Colors.lighter,
   },
   engine: {
-    position: 'absolute',
+        position: 'absolute',
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
   },
   sectionContainer: {
-    marginTop: 32,
+        marginTop: 32,
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+        fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
   },
   sectionDescription: {
-    marginTop: 8,
+        marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
     color: Colors.dark,
   },
   highlight: {
-    fontWeight: '700',
+        fontWeight: '700',
   },
   footer: {
-    color: Colors.dark,
+        color: Colors.dark,
     fontSize: 12,
     fontWeight: '600',
     padding: 4,
